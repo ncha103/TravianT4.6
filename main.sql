@@ -166,8 +166,8 @@ CREATE TABLE `gameServers` (
 --
 
 INSERT INTO `gameServers` (`id`, `worldId`, `speed`, `name`, `version`, `gameWorldUrl`, `startTime`, `roundLength`, `finished`, `registerClosed`, `activation`, `preregistration_key_only`, `hidden`, `promoted`, `configFileLocation`) VALUES
-(9, 'dev', 5000, 'Developer', 4, 'http://dev.YOUR_DOMAIN', 1538922600, 1, 0, 0, 1, 0, 0, 0, '/home/travian/USERNAME_HERE/servers/dev/include/connection.php'),
-(359, 'ts2', 100000, '100000X', 4, 'http://ts2.YOUR_DOMAIN/', 1685131200, 3, 1, 1, 1, 0, 0, 0, '/home/travian/USERNAME_HERE/servers/ts2/include/connection.php');
+(9, 'dev', 5000, 'Developer', 4, 'http://localhost', 1538922600, 1, 0, 0, 1, 0, 0, 0, '/travian/servers/dev/include/connection.php'),
+(359, 'ts2', 100000, '100000X', 4, 'http://localhost:8000/', 1685131200, 3, 1, 1, 1, 0, 0, 0, '/travian/servers/ts2/include/connection.php');
 
 
 -- --------------------------------------------------------

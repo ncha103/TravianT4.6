@@ -13,8 +13,8 @@ class TaskRunner
 {
     //edit
     private $users = [
-        'USERNAME_HERE' => [
-            'main_domain' => 'YOUR_DOMAIN',
+        'travian' => [
+            'main_domain' => 'travian',
             'type' => 'cloudflare',
             'zone_id' => 'ZONEID',
             'email' => 'Email@email.com',

@@ -1,5 +1,5 @@
 #!/bin/bash
-supported_users=("USERNAME_HERE")
+supported_users=("travian")
 do_restart_engines=false
 do_stop_engines=false
 sync_dev=true
