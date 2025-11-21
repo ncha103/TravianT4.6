@@ -8,7 +8,7 @@ use function is_numeric;
 use function shell_exec;
 use const INCLUDE_PATH;
 use const PHP_BINARY_LOC;
-use ClouDNS_SDK;
+//use ClouDNS_SDK;
 
 class ServerManager
 {
@@ -58,7 +58,7 @@ class ServerManager
             $nginxConf
         );
         file_put_contents("/etc/nginx/conf.d/{$this->user}_{$installationData['worldId']}.conf", $nginxConf);
-        $this->addDnsRecord($installationData['worldId']);
+        //$this->addDnsRecord($installationData['worldId']);
         shell_exec('systemctl reload nginx');
         $from_location = $this->script_locations[$installationData['worldId'] == 'dev' ? 'dev' : 'prod'] . '/copyable/';
         $to_location = $this->getGameWorldBaseLocation($installationData['worldId']);
@@ -346,6 +346,7 @@ class ServerManager
         return false;
     }
 
+    /*
     public function getDnsManager()
     {
         global $config;
@@ -380,6 +381,7 @@ class ServerManager
             }
         }
     }
+    */
 
     private function getBashName($name)
     {
@@ -408,9 +410,9 @@ class ServerManager
         shell_exec(sprintf("rm -rf /etc/systemd/system/%s", $this->getBashName($gameWorld['worldId'])));
         shell_exec(sprintf("rm -rf /travian/services/{$this->user}/%s", $this->getBashName($gameWorld['worldId'])));
 
-        shell_exec("rm -rf /etc/nginx/conf.d/{$this->user}_{$gameWorld['worldId']}.conf");
+        shell_exec(sprintf("rm -rf /etc/nginx/conf.d/{$this->user}_{$gameWorld['worldId']}.conf"));
 
-        $this->deleteDnsRecord($gameWorld['worldId']);
+        //$this->deleteDnsRecord($gameWorld['worldId']);
 
         shell_exec('systemctl reload nginx');
 

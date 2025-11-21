@@ -9,6 +9,6 @@ spl_autoload_register(function ($className) {
     return false;
 });
 require __DIR__ . "/vendor/autoload.php";
-require __DIR__ . "/ClouDNS_SDK.php";
+// require __DIR__ . "/ClouDNS_SDK.php";
 require __DIR__ . "/functions.php";
 define("PHP_BINARY_LOC", '/usr/bin/php');
